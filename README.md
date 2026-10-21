@@ -51,7 +51,7 @@ go -C backend run ./cmd/api
 npm --prefix frontend run dev
 ```
 
-Vite serves the UI at [http://localhost:5173](http://localhost:5173) and proxies `/api` to Go on port 3000. Start the backend first. Set `PORT` to change the Go port, or `VITE_API_TARGET` if the backend runs elsewhere.
+Vite serves the UI at [http://localhost:5173](http://localhost:5173) and proxies `/api` to Go on port 3000. Start the backend first. Optional settings are `PORT` (Go listen port, default `3000`), `DB_PATH` (SQLite file, default `../data/orders.sqlite` from the backend working directory), `FRONTEND_DIST` (built static UI directory, default `../frontend/dist` from the backend working directory), and `VITE_API_TARGET` (Vite API proxy target, default `http://localhost:3000`).
 
 `GET /health` and `GET /api/health` return `{"status":"ok","database":"ok"}` when SQLite is reachable.
 
